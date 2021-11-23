@@ -16,7 +16,7 @@ class data(Resource):
             return {"error": "sms is empty"}
         return checker_logic(json_data["sms"])
 
-api.add_resource(data, "/sms-checker/")
+api.add_resource(data, "/sms-checker")
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -19,7 +19,6 @@ def word_count(sms):
     return 0
 
 def character_count(sms):
-    print(len(sms))
     if (len(sms)>150) & (len(sms)<255):
         return 1 
     return 0
@@ -63,7 +62,6 @@ def spell_check(sms):
     return 1
 
 def capitalization_style(sms):
-    print(sms[0])
     if sms[0].upper() != sms[0]:
         return 0
     count = 0
