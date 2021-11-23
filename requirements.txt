@@ -1,0 +1,6 @@
+better_profanity==0.7.0
+emoji==1.6.1
+Flask==2.0.2
+Flask_RESTful==0.3.9
+pyspellchecker==0.6.2
+spellchecker==0.4
