@@ -9,6 +9,7 @@ SPELLING = SpellChecker()
 # sms = "{SiteName}: Hi {FirstName}👋, you left {SiteName} without your purchase!
 # Grab it now at 10% off, before items sell out: {AbandonedCheckoutUrl}. Reply STOP to opt-out"
 
+
 def find_all(string, character):
     """find_all"""
     idx = string.find(character)
@@ -16,11 +17,13 @@ def find_all(string, character):
         yield idx
         idx = string.find(character, idx+1)
 
+
 def word_count(sms):
     """word_count"""
     if len(sms.split()) in range(20, 30):
         return 1
     return 0
+
 
 def character_count(sms):
     """character_count"""
@@ -28,11 +31,13 @@ def character_count(sms):
         return 1
     return 0
 
+
 def link(sms):
     """link"""
     if ("url" in sms.lower()) or ("link" in sms.lower()):
         return 1
     return 0
+
 
 def active_language(sms):
     """active_language"""
@@ -41,11 +46,13 @@ def active_language(sms):
             return 0
     return 1
 
+
 def promotion(sms):
     """promotion"""
     if "%" in sms.lower():
         return 1
     return 0
+
 
 def sense_of_urgency(sms):
     """sense_of_urgency"""
@@ -53,11 +60,13 @@ def sense_of_urgency(sms):
         return 1
     return 0
 
+
 def personalization(sms):
     """personalization"""
     if ("{" in sms.lower()) & ("}" in sms.lower()):
         return 1
     return 0
+
 
 def emojis_count(sms):
     """emojis_count"""
@@ -65,6 +74,7 @@ def emojis_count(sms):
     if len(emojies) > 0:
         return 1
     return 0
+
 
 def spell_check(sms):
     """spell_check"""
@@ -76,6 +86,7 @@ def spell_check(sms):
         if "{" not in word:
             return 0
     return 1
+
 
 def capitalization_style(sms):
     """capitalization_style"""
@@ -91,12 +102,14 @@ def capitalization_style(sms):
         return 1
     return 0
 
+
 def bad_words(sms):
     """bad_words"""
     censored = profanity.censor(sms)
     if censored.lower() == sms.lower():
         return 1
     return 0
+
 
 def rules_and_requlations(sms):
     """def rules_and_requlations"""
@@ -105,11 +118,13 @@ def rules_and_requlations(sms):
             return 1
     return 0
 
+
 def opt_out(sms):
     """opt_out"""
     if ("opt" in sms.lower()) & ("out" in sms.lower()):
         return 1
     return 0
+
 
 def checker_logic(sms):
     """checker_logic"""

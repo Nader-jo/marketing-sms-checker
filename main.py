@@ -13,8 +13,10 @@ ARGS.add_argument("sms", type=str, help="sms message is required", required=True
 
 class Data(Resource):
     """data"""
+    cmnt = ""
     def get(self):
         """get"""
+        self.cmnt = "cmnt"
         json_data = ARGS.parse_args()
         if len(json_data["sms"]) == 0:
             return {"error": "sms is empty"}
